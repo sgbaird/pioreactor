@@ -14,10 +14,10 @@ from json import loads
 
 import os
 if os.name=='nt':
-    from os import geteuid
-else:
     import getpass
     geteuid = getpass.getuser() # closest Windows equivalent
+else:
+    from os import geteuid
 
 from shlex import quote
 from sys import exit
