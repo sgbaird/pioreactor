@@ -11,7 +11,14 @@ import subprocess
 from concurrent.futures import ThreadPoolExecutor
 from json import dumps
 from json import loads
-from os import geteuid
+
+import os
+if os.name=='nt':
+    from os import geteuid
+else:
+    import getpass
+    geteuid = getpass.getuser() # closest Windows equivalent
+
 from shlex import quote
 from sys import exit
 from time import sleep
