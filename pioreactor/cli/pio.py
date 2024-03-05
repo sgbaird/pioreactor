@@ -15,7 +15,7 @@ from json import loads
 import os
 if os.name=='nt':
     import getpass
-    geteuid = getpass.getuser() # closest Windows equivalent
+    geteuid = getpass.getuser # closest Windows equivalent
 else:
     from os import geteuid
 
